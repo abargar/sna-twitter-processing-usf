@@ -96,7 +96,7 @@ class KeywordFilter:
 
     def check_author(self, tweet):
         author = tweet['user']['screen_name']
-        # exact equals, is that good?
+        # require exact equality
         return any(term.replace(" ", "") == author for term in self.keywords)
 
     def check_entities(self, tweet):
